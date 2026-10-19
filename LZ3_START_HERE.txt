@@ -1,0 +1,26 @@
+MasterDesk — №3 зертханалық жұмыс файлдары (20.10.2026)
+
+Бұл архивті masterDesk репозиторийінің түбіріне ашыңыз.
+Түбірдегі бар README.md / PROJECT_STATE.md файлдарын ауыстырмаңыз.
+Құжаттардың барлығы docs/ ішінде тиісті қалталарда орналасады.
+
+Негізгі файлдар:
+- docs/business-case/MasterDesk_LZ3_Business_Case.docx
+- docs/charter/MasterDesk_Project_Charter.docx
+- docs/finmodel.ods (методичкадағы формат)
+- docs/finmodel.xlsx (формулаларды Excel-де тексеруге де болады)
+- docs/business-case/defense_5min_kz.md
+- docs/business-case/sources_and_assumptions.md
+
+Қаржы есептері толықтай жорамалға сүйенген. TechPoint бойынша нақты
+тапсырыс саны мен уақытты өлшеу, өкілдің мақұлдауы әлі жүргізілмеген.
+
+PowerShell, жоба папкасында:
+  git status
+  git checkout -b docs/lz3-business-case
+  git add docs/ LZ3_START_HERE.txt
+  git commit -m "docs: add MasterDesk business case and financial model"
+  git push -u origin docs/lz3-business-case
+
+Одан кейін GitHub-та Pull Request ашып, Амирге тексертіңіз.
+Егер осы атаудағы branch бұрыннан болса, басқа бос атау таңдаңыз.
