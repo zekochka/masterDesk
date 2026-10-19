@@ -1,0 +1,242 @@
+[
+  {
+    "id": "US-01",
+    "title": "US-01: Қызметкердің жүйеге кіруі",
+    "body_file": "docs/requirements/issues/US-01.md",
+    "labels": [
+      "type:story",
+      "epic:intake",
+      "size:S",
+      "priority:P0",
+      "release:mvp"
+    ]
+  },
+  {
+    "id": "US-02",
+    "title": "US-02: Жаңа клиентті тіркеу",
+    "body_file": "docs/requirements/issues/US-02.md",
+    "labels": [
+      "type:story",
+      "epic:intake",
+      "size:S",
+      "priority:P0",
+      "release:mvp"
+    ]
+  },
+  {
+    "id": "US-03",
+    "title": "US-03: Бар клиентті телефонмен табу",
+    "body_file": "docs/requirements/issues/US-03.md",
+    "labels": [
+      "type:story",
+      "epic:intake",
+      "size:S",
+      "priority:P0",
+      "release:mvp"
+    ]
+  },
+  {
+    "id": "US-04",
+    "title": "US-04: Құрылғы картасын жасау",
+    "body_file": "docs/requirements/issues/US-04.md",
+    "labels": [
+      "type:story",
+      "epic:intake",
+      "size:S",
+      "priority:P0",
+      "release:mvp"
+    ]
+  },
+  {
+    "id": "US-05",
+    "title": "US-05: Жөндеу тапсырысын ашу",
+    "body_file": "docs/requirements/issues/US-05.md",
+    "labels": [
+      "type:story",
+      "epic:intake",
+      "size:M",
+      "priority:P0",
+      "release:mvp"
+    ]
+  },
+  {
+    "id": "US-06",
+    "title": "US-06: Тапсырыстар тізімін көру",
+    "body_file": "docs/requirements/issues/US-06.md",
+    "labels": [
+      "type:story",
+      "epic:planning",
+      "size:S",
+      "priority:P0",
+      "release:mvp"
+    ]
+  },
+  {
+    "id": "US-07",
+    "title": "US-07: Шеберді тағайындау",
+    "body_file": "docs/requirements/issues/US-07.md",
+    "labels": [
+      "type:story",
+      "epic:planning",
+      "size:S",
+      "priority:P0",
+      "release:mvp"
+    ]
+  },
+  {
+    "id": "US-08",
+    "title": "US-08: Диагностика қорытындысын енгізу",
+    "body_file": "docs/requirements/issues/US-08.md",
+    "labels": [
+      "type:story",
+      "epic:diagnosis",
+      "size:M",
+      "priority:P0",
+      "release:mvp"
+    ]
+  },
+  {
+    "id": "US-09",
+    "title": "US-09: Алдын ала жөндеу бағасын көрсету",
+    "body_file": "docs/requirements/issues/US-09.md",
+    "labels": [
+      "type:story",
+      "epic:diagnosis",
+      "size:S",
+      "priority:P0",
+      "release:mvp"
+    ]
+  },
+  {
+    "id": "US-10",
+    "title": "US-10: Бағаның келісілгенін белгілеу",
+    "body_file": "docs/requirements/issues/US-10.md",
+    "labels": [
+      "type:story",
+      "epic:diagnosis",
+      "size:M",
+      "priority:P0",
+      "release:mvp"
+    ]
+  },
+  {
+    "id": "US-11",
+    "title": "US-11: Тапсырыс статусын өзгерту",
+    "body_file": "docs/requirements/issues/US-11.md",
+    "labels": [
+      "type:story",
+      "epic:repair",
+      "size:M",
+      "priority:P0",
+      "release:mvp"
+    ]
+  },
+  {
+    "id": "US-12",
+    "title": "US-12: Жөндеу жазбасын толықтыру",
+    "body_file": "docs/requirements/issues/US-12.md",
+    "labels": [
+      "type:story",
+      "epic:repair",
+      "size:S",
+      "priority:P1",
+      "release:later"
+    ]
+  },
+  {
+    "id": "US-13",
+    "title": "US-13: Беруге дайын деп белгілеу",
+    "body_file": "docs/requirements/issues/US-13.md",
+    "labels": [
+      "type:story",
+      "epic:handover",
+      "size:S",
+      "priority:P0",
+      "release:mvp"
+    ]
+  },
+  {
+    "id": "US-14",
+    "title": "US-14: Құрылғыны клиентке беруді тіркеу",
+    "body_file": "docs/requirements/issues/US-14.md",
+    "labels": [
+      "type:story",
+      "epic:handover",
+      "size:S",
+      "priority:P0",
+      "release:mvp"
+    ]
+  },
+  {
+    "id": "US-15",
+    "title": "US-15: Нөмір және статус бойынша іздеу",
+    "body_file": "docs/requirements/issues/US-15.md",
+    "labels": [
+      "type:story",
+      "epic:control",
+      "size:M",
+      "priority:P0",
+      "release:mvp"
+    ]
+  },
+  {
+    "id": "US-16",
+    "title": "US-16: Өзгерістер тарихын қарау",
+    "body_file": "docs/requirements/issues/US-16.md",
+    "labels": [
+      "type:story",
+      "epic:control",
+      "size:M",
+      "priority:P0",
+      "release:mvp"
+    ]
+  },
+  {
+    "id": "US-17",
+    "title": "US-17: Рөлдерге сай қолжетімділік",
+    "body_file": "docs/requirements/issues/US-17.md",
+    "labels": [
+      "type:story",
+      "epic:control",
+      "size:M",
+      "priority:P0",
+      "release:mvp"
+    ]
+  },
+  {
+    "id": "US-18",
+    "title": "US-18: Тапсырыстардың жиынтық көрсеткіші",
+    "body_file": "docs/requirements/issues/US-18.md",
+    "labels": [
+      "type:story",
+      "epic:control",
+      "size:S",
+      "priority:P1",
+      "release:later"
+    ]
+  },
+  {
+    "id": "US-19",
+    "title": "US-19: Ескі тізімнен деректерді импорттау",
+    "body_file": "docs/requirements/issues/US-19.md",
+    "labels": [
+      "type:story",
+      "epic:control",
+      "size:M",
+      "priority:P1",
+      "release:later"
+    ]
+  },
+  {
+    "id": "US-20",
+    "title": "US-20: Тапсырыс тізімін экспорттау",
+    "body_file": "docs/requirements/issues/US-20.md",
+    "labels": [
+      "type:story",
+      "epic:control",
+      "size:S",
+      "priority:P1",
+      "release:later"
+    ]
+  }
+]
