@@ -1,0 +1,24 @@
+<div class="page-heading">
+  <div><div class="eyebrow">УПРАВЛЕНИЕ ЗАКАЗАМИ</div><h1>Заказы</h1><p>Контролируйте ремонт от приёма до выдачи клиенту.</p></div>
+  <a class="button button-primary" routerLink="/orders/new"><span class="button-plus">+</span> Новый заказ</a>
+</div>
+
+<section class="panel list-panel">
+  <div class="list-toolbar">
+    <div class="search-field"><span aria-hidden="true">⌕</span><input type="search" placeholder="Поиск по номеру или клиенту" aria-label="Поиск заказов" [value]="search()" (input)="search.set($any($event.target).value)" /></div>
+    <div class="toolbar-controls"><label class="select-wrap"><span class="sr-only">Фильтр по статусу</span><select [value]="status()" (change)="setStatus($any($event.target).value)"><option value="all">Все статусы</option>@for (item of statuses; track item.value) { <option [value]="item.value">{{ item.label }}</option> }</select></label><button class="button button-secondary sort-button" type="button" (click)="newestFirst.set(!newestFirst())">Дата {{ newestFirst() ? '↓' : '↑' }}</button></div>
+  </div>
+  <div class="list-count">Показано {{ filtered().length }} из {{ data.totalOrders() }} заказов</div>
+  <div class="mobile-table-hint">Проведите по таблице влево, чтобы увидеть все столбцы →</div>
+  @if (filtered().length) {
+    <div class="table-scroll"><table class="data-table orders-table"><thead><tr><th>Номер заказа</th><th>Клиент</th><th>Устройство</th><th>Описание проблемы</th><th>Статус</th><th>Ответственный мастер</th><th>Дата создания</th><th>Стоимость</th><th>Действия</th></tr></thead><tbody>
+      @for (order of filtered(); track order.id) {
+        <tr><td><a class="order-number" [routerLink]="['/orders', order.id]">{{ order.number }}</a></td><td><strong>{{ data.getClient(order.clientId)?.fullName ?? 'Неизвестный клиент' }}</strong><small>{{ data.getClient(order.clientId)?.phone }}</small></td><td><strong>{{ order.brand }} {{ order.model }}</strong><small>{{ order.deviceType }}</small></td><td><span class="truncate-cell" [title]="order.problem">{{ order.problem }}</span></td><td><span class="status-pill status-{{ order.status }}">{{ statusLabel(order.status) }}</span></td><td>{{ data.getTechnician(order.technicianId)?.fullName ?? 'Не назначен' }}</td><td class="muted-cell">{{ formatDate(order.createdAt) }}</td><td class="money-cell">{{ formatMoney(order.estimatedCost) }}</td><td><div class="row-actions"><a class="small-action" [routerLink]="['/orders', order.id]" [attr.aria-label]="'Открыть заказ ' + order.number" title="Подробнее">↗</a><a class="small-action" [routerLink]="['/orders', order.id, 'edit']" [attr.aria-label]="'Редактировать заказ ' + order.number" title="Изменить">✎</a><button class="small-action small-action-danger" type="button" [attr.aria-label]="'Удалить заказ ' + order.number" title="Удалить" (click)="pendingDelete.set(order)">×</button></div></td></tr>
+      }
+    </tbody></table></div>
+  } @else { <div class="empty-state"><span class="empty-icon">⌕</span><strong>Заказы не найдены</strong><p>Попробуйте изменить запрос или фильтр.</p><button class="button button-secondary" type="button" (click)="search.set(''); status.set('all')">Сбросить фильтры</button></div> }
+</section>
+
+@if (pendingDelete(); as order) {
+  <app-confirm-dialog title="Удалить заказ?" [description]="'Заказ ' + order.number + ' будет удалён без возможности восстановления.'" (confirm)="remove()" (cancel)="pendingDelete.set(null)" />
+}
