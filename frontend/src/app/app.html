@@ -14,8 +14,13 @@
       </button>
       @if (requestsOpen()) {
         <div class="nav-submenu">
+          @if (auth.user()?.role === 'Master') {
+          <a routerLink="/requests/available" routerLinkActive="active" (click)="menuOpen.set(false)">Новые заявки</a>
+          <a routerLink="/requests/assigned" routerLinkActive="active" (click)="menuOpen.set(false)">Мои ремонты</a>
+          } @else {
           <a routerLink="/requests/new" routerLinkActive="active" (click)="menuOpen.set(false)">Создать заявку</a>
           <a routerLink="/requests/my" routerLinkActive="active" (click)="menuOpen.set(false)">Мои заявки</a>
+          }
         </div>
       }
       <a routerLink="/settings" routerLinkActive="active" (click)="menuOpen.set(false)"><span class="nav-icon" aria-hidden="true">⚙</span>Настройки</a>

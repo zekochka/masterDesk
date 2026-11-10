@@ -1,0 +1,8 @@
+  MasterDesk.Api -> C:\Users\hakot\MyProjects\it_management\masterDesk\backend\MasterDesk.Api\bin\Lz11Check\MasterDesk.Api.dll
+
+Сборка успешно завершена.
+    Предупреждений: 0
+    Ошибок: 0
+
+Прошло времени 00:00:01.99
+EXIT_CODE=0

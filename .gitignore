@@ -1,0 +1,9 @@
+backend/**/bin/
+backend/**/obj/
+tests/**/bin/
+tests/**/obj/
+frontend/.test-tmp/
+.test-tmp/
+.env
+.env.*
+backend/**/appsettings.*.json

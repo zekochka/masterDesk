@@ -14,7 +14,7 @@ export class AuthPage {
   private readonly router = inject(Router);
   private readonly route = inject(ActivatedRoute);
   readonly registration = this.route.snapshot.routeConfig?.path === 'register';
-  readonly returnUrl = this.route.snapshot.queryParamMap.get('returnUrl') ?? '/requests/my';
+  readonly returnUrl = this.route.snapshot.queryParamMap.get('returnUrl');
   readonly error = signal('');
   readonly saving = signal(false);
   readonly form = this.fb.nonNullable.group({
@@ -38,9 +38,10 @@ export class AuthPage {
     }
     this.saving.set(true);
     try {
-      if (this.registration) await this.auth.register(value.username, value.password);
+      if (this.registration) await this.auth.register(value.username, value.password, value.confirmPassword);
       else await this.auth.login(value.username, value.password);
-      const destination = this.returnUrl.startsWith('/') && !this.returnUrl.startsWith('//') ? this.returnUrl : '/requests/my';
+      const fallback = this.auth.user()?.role === 'Master' ? '/requests/available' : '/requests/my';
+      const destination = this.returnUrl?.startsWith('/') && !this.returnUrl.startsWith('//') ? this.returnUrl : fallback;
       await this.router.navigateByUrl(destination);
     } catch (error) {
       this.error.set(error instanceof Error ? error.message : 'Не удалось войти. Попробуйте ещё раз.');

@@ -1,0 +1,28 @@
+
+> frontend@0.0.0 build
+> ng build
+
+> Building...
+√ Building...
+Initial chunk files | Names         |  Raw size | Estimated transfer size
+chunk-DMgMIaL1.js   | -             | 147.94 kB |                43.66 kB
+main-O7RXA64A.js    | main          | 130.60 kB |                33.74 kB
+styles-K4N3JDNX.css | styles        |  11.95 kB |                 2.76 kB
+
+                    | Initial total | 290.49 kB |                80.16 kB
+
+Lazy chunk files    | Names         |  Raw size | Estimated transfer size
+chunk-Cap2gZbd.js   | -             |  44.33 kB |                 9.66 kB
+chunk-Bp_ZoBo8.js   | orders        |   5.71 kB |                 1.87 kB
+chunk-BJ_GwGPr.js   | order-form    |   5.41 kB |                 2.00 kB
+chunk-Cf9Sy3Ch.js   | auth          |   5.05 kB |                 1.91 kB
+chunk-DAVp6Mi3.js   | shop          |   4.70 kB |                 1.79 kB
+chunk-BKVhNy9L.js   | settings      |   3.80 kB |                 1.46 kB
+chunk-C2184Oq2.js   | dashboard     |   3.71 kB |                 1.43 kB
+chunk-GU0ExjUd.js   | -             |   1.08 kB |               463 bytes
+
+Application bundle generation complete. [6.765 seconds] - 2026-11-10T13:38:07.528Z
+
+Output location: C:\Users\hakot\MyProjects\it_management\masterDesk\frontend\dist\frontend
+
+EXIT_CODE=0

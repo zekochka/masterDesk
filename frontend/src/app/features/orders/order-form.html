@@ -16,5 +16,5 @@
     </div>
     <div class="field field-full"><label for="comment">Дополнительный комментарий <span class="optional">необязательно</span></label><textarea id="comment" formControlName="comment" rows="3" placeholder="Удобное время для звонка или другие детали"></textarea></div>
   </div>
-  <div class="form-actions"><a class="button button-secondary" routerLink="/requests/my">Мои заявки</a><button class="button button-primary" type="submit">Отправить заявку</button></div>
+  <div class="form-actions"><a class="button button-secondary" routerLink="/requests/my">Мои заявки</a><button class="button button-primary" type="submit" [disabled]="saving()">{{ saving() ? 'Отправка…' : 'Отправить заявку' }}</button></div>
 </form>
