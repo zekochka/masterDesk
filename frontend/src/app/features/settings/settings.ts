@@ -18,7 +18,7 @@ export class SettingsPage {
     firstName: [this.auth.user()?.firstName ?? ''],
     lastName: [this.auth.user()?.lastName ?? ''],
     email: [this.auth.user()?.email ?? '', Validators.email],
-    phone: [this.auth.user()?.phone ?? '', Validators.pattern(/^$|^\+?[\d\s()\-]{10,20}$/)],
+    phone: [this.auth.user()?.phone ?? '', Validators.pattern(/^$|^\+?[\d\s()-]{10,20}$/)],
   });
 
   save(): void {
