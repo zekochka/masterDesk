@@ -21,7 +21,7 @@ export class OrderFormPage {
     deviceType: ['', Validators.required],
     brandModel: ['', Validators.required],
     problem: ['', Validators.required],
-    phone: ['', [Validators.required, Validators.pattern(/^\+?[\d\s()\-]{10,20}$/)]],
+    phone: ['', [Validators.required, Validators.pattern(/^\+?[\d\s()-]{10,20}$/)]],
     comment: [''],
   });
 
