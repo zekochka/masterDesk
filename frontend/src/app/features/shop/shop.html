@@ -1,0 +1,28 @@
+<div class="page-heading"><div><span class="eyebrow">КАТАЛОГ</span><h1>Магазин</h1><p>Примеры новой и восстановленной техники. Товары и цены показаны для демонстрации.</p></div></div>
+<div class="catalog-filters">
+  <div class="category-list" aria-label="Категории товаров">
+    @for (item of categories; track item) {
+      <button type="button" [class.selected]="category() === item" [attr.aria-pressed]="category() === item" (click)="category.set(item)">{{ item }}</button>
+    }
+  </div>
+  <label class="condition-select">Состояние
+    <select [value]="condition()" (change)="setCondition($any($event.target).value)">
+      @for (item of conditions; track item.value) { <option [value]="item.value">{{ item.label }}</option> }
+    </select>
+  </label>
+</div>
+@if (products().length) {
+  <div class="product-grid">
+    @for (product of products(); track product.id) {
+      <article class="product-card">
+        <div class="product-image"><img [src]="product.imageUrl" [alt]="product.name" loading="lazy"></div>
+        <div class="product-info"><span class="product-category">{{ product.category }}</span><h2>{{ product.name }}</h2><p>{{ product.specs }}</p>
+          <span class="condition-tag">{{ product.condition === 'new' ? 'Новый' : 'Восстановленный' }}</span>
+          <strong class="product-price">{{ formatMoney(product.price) }}</strong>
+        </div>
+      </article>
+    }
+  </div>
+} @else {
+  <div class="empty-state">В этой категории пока нет примеров товаров. Попробуйте другой фильтр.</div>
+}

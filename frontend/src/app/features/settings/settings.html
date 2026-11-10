@@ -1,3 +1,16 @@
-<div class="page-heading"><div><div class="eyebrow">ПАРАМЕТРЫ СИСТЕМЫ</div><h1>Настройки</h1><p>Информация о рабочем пространстве.</p></div></div>
-<div class="settings-layout"><section class="panel settings-panel"><div class="panel-heading"><div><h2>Общие сведения</h2><p>Текущая конфигурация приложения</p></div></div><div class="settings-row"><span>Название системы</span><strong>MasterDesk</strong></div><div class="settings-row"><span>Сервисный центр</span><strong>TechPoint</strong></div><div class="settings-row"><span>Режим работы</span><span class="demo-badge"><span class="workspace-dot"></span> Демонстрационный</span></div></section><section class="panel settings-panel"><div class="panel-heading"><div><h2>Демонстрационные данные</h2><p>Вернуть исходное состояние приложения</p></div></div><p class="settings-description">Все добавленные и изменённые заказы и клиенты будут заменены исходными примерами. Это действие нельзя отменить.</p><button class="button button-outline-danger" type="button" (click)="confirmReset.set(true)">Восстановить исходные данные</button></section></div>
-@if (confirmReset()) { <app-confirm-dialog title="Восстановить данные?" description="Текущие заказы и клиенты будут заменены исходными демонстрационными данными." confirmText="Восстановить" (confirm)="reset()" (cancel)="confirmReset.set(false)" /> }
+<div class="page-heading"><div><span class="eyebrow">ЛИЧНЫЙ КАБИНЕТ</span><h1>Настройки</h1><p>Ваши контактные данные. Все поля профиля можно заполнить позже.</p></div></div>
+<form class="form-panel" [formGroup]="form" (ngSubmit)="save()" novalidate>
+  <div class="form-grid">
+    <div class="field"><label>Логин</label><div class="readonly-value">{{ auth.user()?.username }}</div></div>
+    <div class="field"><label>Роль</label><div class="readonly-value">{{ roleLabels[auth.user()!.role] }}</div></div>
+    <div class="field"><label for="firstName">Имя</label><input id="firstName" formControlName="firstName" autocomplete="given-name" placeholder="Ваше имя"></div>
+    <div class="field"><label for="lastName">Фамилия</label><input id="lastName" formControlName="lastName" autocomplete="family-name" placeholder="Ваша фамилия"></div>
+    <div class="field"><label for="email">Email <span class="optional">необязательно</span></label><input id="email" formControlName="email" type="email" autocomplete="email" placeholder="name@example.com">
+      @if (form.controls.email.touched && form.controls.email.invalid) { <span class="field-error">Проверьте адрес электронной почты</span> }
+    </div>
+    <div class="field"><label for="phone">Телефон <span class="optional">необязательно</span></label><input id="phone" formControlName="phone" type="tel" autocomplete="tel" placeholder="+7 700 000 00 00">
+      @if (form.controls.phone.touched && form.controls.phone.invalid) { <span class="field-error">Проверьте номер телефона</span> }
+    </div>
+  </div>
+  <div class="form-actions"><button class="button button-primary" type="submit">Сохранить изменения</button></div>
+</form>

@@ -1,0 +1,24 @@
+<div class="auth-wrap"><div class="auth-card">
+  <span class="eyebrow">ЛИЧНЫЙ КАБИНЕТ</span>
+  <h1>{{ registration ? 'Регистрация' : 'Вход' }}</h1>
+  <p>{{ registration ? 'Создайте аккаунт, чтобы оставлять заявки и следить за ними.' : 'Войдите, чтобы управлять своими заявками и профилем.' }}</p>
+  <form [formGroup]="form" (ngSubmit)="submit()" novalidate>
+    <div class="field"><label for="username">Логин</label><input id="username" formControlName="username" autocomplete="username" placeholder="Введите логин">
+      @if (form.controls.username.touched && form.controls.username.invalid) { <span class="field-error">Введите логин</span> }
+    </div>
+    <div class="field"><label for="password">Пароль</label><input id="password" formControlName="password" type="password" [attr.autocomplete]="registration ? 'new-password' : 'current-password'" placeholder="Введите пароль">
+      @if (form.controls.password.touched && form.controls.password.invalid) { <span class="field-error">{{ registration ? 'Минимум 8 символов' : 'Введите пароль' }}</span> }
+    </div>
+    @if (registration) {
+      <div class="field"><label for="confirmPassword">Подтверждение пароля</label><input id="confirmPassword" formControlName="confirmPassword" type="password" autocomplete="new-password" placeholder="Повторите пароль"></div>
+    }
+    @if (error()) { <div class="form-error" role="alert">{{ error() }}</div> }
+    <button class="button button-primary auth-submit" type="submit" [disabled]="saving()">{{ saving() ? 'Подождите…' : registration ? 'Зарегистрироваться' : 'Войти' }}</button>
+  </form>
+  @if (registration) {
+    <p class="auth-switch">Уже есть аккаунт? <a routerLink="/login" [queryParams]="{ returnUrl: returnUrl }">Войти</a></p>
+  } @else {
+    <p class="auth-switch">Нет аккаунта? <a routerLink="/register" [queryParams]="{ returnUrl: returnUrl }">Зарегистрироваться</a></p>
+  }
+  <p class="demo-note">Демонстрационный вход: данные хранятся только в этом браузере. Для реального использования потребуется серверная авторизация.</p>
+</div></div>

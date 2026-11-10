@@ -1,34 +1,38 @@
-<div class="page-heading dashboard-heading">
-  <div><div class="eyebrow">ОБЗОР РАБОТЫ</div><h1>Главная</h1><p>Все важные показатели сервисного центра в одном месте.</p></div>
-  <a class="button button-primary" routerLink="/orders/new"><span class="button-plus">+</span> Новый заказ</a>
-</div>
-
-<section class="metric-grid" aria-label="Показатели работы">
-  <div class="metric-card"><span class="metric-icon icon-blue">▤</span><span class="metric-label">Всего заказов</span><strong>{{ data.totalOrders() }}</strong><span class="metric-note">За всё время</span></div>
-  <div class="metric-card"><span class="metric-icon icon-cyan">✦</span><span class="metric-label">Новые заказы</span><strong>{{ newCount() }}</strong><span class="metric-note">Ожидают обработки</span></div>
-  <div class="metric-card"><span class="metric-icon icon-amber">⚒</span><span class="metric-label">В ремонте</span><strong>{{ repairCount() }}</strong><span class="metric-note">В работе у мастеров</span></div>
-  <div class="metric-card"><span class="metric-icon icon-green">✓</span><span class="metric-label">Завершённые</span><strong>{{ completedCount() }}</strong><span class="metric-note">Готовы или выданы</span></div>
+<section class="hero-section">
+  <div class="hero-copy">
+    <span class="eyebrow">СЕРВИСНЫЙ ЦЕНТР MASTERDESK</span>
+    <h1>Ремонт и обслуживание техники</h1>
+    <p>Поможем разобраться с неисправностью, проведём диагностику и восстановим работу компьютера, ноутбука или смартфона. Оставьте заявку, и мы свяжемся с вами.</p>
+    <div class="hero-actions">
+      <a class="button button-primary" routerLink="/requests/new">Оставить заявку</a>
+      <a class="button button-secondary" routerLink="/shop">Перейти в магазин</a>
+    </div>
+  </div>
+  <div class="hero-illustration" aria-hidden="true">
+    <div class="hero-screen"><span>MasterDesk</span><div class="screen-line"></div><div class="screen-line short"></div><div class="screen-check">✓</div></div>
+    <div class="hero-base"></div>
+  </div>
 </section>
 
-<div class="dashboard-grid">
-  <section class="panel recent-panel">
-    <div class="panel-heading"><div><h2>Последние заказы</h2><p>Недавно поступившая техника</p></div><a class="text-link" routerLink="/orders">Все заказы <span>→</span></a></div>
-    @if (recent().length) {
-      <div class="table-scroll"><table class="data-table recent-table"><thead><tr><th>Заказ</th><th>Клиент и устройство</th><th>Статус</th><th>Дата</th><th></th></tr></thead><tbody>
-        @for (order of recent(); track order.id) {
-          <tr><td><a class="order-number" [routerLink]="['/orders', order.id]">{{ order.number }}</a></td><td><strong>{{ data.getClient(order.clientId)?.fullName ?? 'Неизвестный клиент' }}</strong><small>{{ order.brand }} {{ order.model }}</small></td><td><span class="status-pill status-{{ order.status }}">{{ statusLabel(order.status) }}</span></td><td class="muted-cell">{{ formatDate(order.createdAt) }}</td><td><a class="table-arrow" [routerLink]="['/orders', order.id]" [attr.aria-label]="'Открыть заказ ' + order.number">↗</a></td></tr>
-        }
-      </tbody></table></div>
-    } @else { <div class="empty-state">Заказов пока нет. Создайте первый заказ, чтобы начать работу.</div> }
-  </section>
+<section class="content-section" aria-labelledby="services-heading">
+  <div class="section-heading"><h2 id="services-heading">Наши услуги</h2><p>Помогаем с повседневными задачами и сложным ремонтом техники.</p></div>
+  <div class="service-grid">
+    @for (service of services; track service; let index = $index) {
+      <div class="service-card"><span class="service-number">0{{ index + 1 }}</span><h3>{{ service }}</h3></div>
+    }
+  </div>
+</section>
 
-  <section class="panel status-panel">
-    <div class="panel-heading"><div><h2>Статусы заказов</h2><p>Распределение по этапам</p></div></div>
-    <div class="status-total"><strong>{{ data.totalOrders() }}</strong><span>заказов всего</span></div>
-    <div class="status-breakdown">
-      @for (status of stats(); track status.value) {
-        <div class="status-row"><div class="status-row-label"><span class="status-dot dot-{{ status.value }}"></span><span>{{ status.label }}</span><strong>{{ status.count }}</strong></div><div class="progress-track"><div class="progress-fill fill-{{ status.value }}" [style.width.%]="status.percent"></div></div></div>
-      }
-    </div>
-  </section>
-</div>
+<section class="content-section" aria-labelledby="steps-heading">
+  <div class="section-heading"><h2 id="steps-heading">Как это работает</h2><p>От обращения до готовой техники — четыре понятных шага.</p></div>
+  <ol class="steps-grid">
+    @for (step of steps; track step; let index = $index) {
+      <li><span>{{ index + 1 }}</span><p>{{ step }}</p></li>
+    }
+  </ol>
+</section>
+
+<section class="shop-callout" aria-labelledby="more-heading">
+  <div><h2 id="more-heading">Техника и комплектующие</h2><p>В нашем каталоге можно посмотреть новую и восстановленную технику, комплектующие и периферию. Цены в каталоге приведены для демонстрации.</p></div>
+  <a class="button button-secondary" routerLink="/shop">Смотреть каталог</a>
+</section>
