@@ -3,33 +3,38 @@
     <button class="sidebar-backdrop" type="button" aria-label="Закрыть меню" (click)="menuOpen.set(false)"></button>
   }
   <aside class="sidebar" [class.sidebar-open]="menuOpen()">
-    <a class="brand" routerLink="/" aria-label="MasterDesk — главная">
-      <span class="brand-mark"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M5 23V9l11 9L27 9v14" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-      <span class="brand-copy"><strong>MasterDesk</strong><small>TechPoint</small></span>
+    <a class="brand" routerLink="/" (click)="menuOpen.set(false)" aria-label="MasterDesk — главная">
+      <span class="brand-mark" aria-hidden="true">M</span><strong>MasterDesk</strong>
     </a>
-    <div class="sidebar-caption">РАБОЧЕЕ ПРОСТРАНСТВО</div>
     <nav class="sidebar-nav" aria-label="Главная навигация">
-      <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"><span class="nav-icon">▦</span>Главная</a>
-      <a routerLink="/orders" routerLinkActive="active"><span class="nav-icon">▤</span>Заказы</a>
-      <a routerLink="/clients" routerLinkActive="active"><span class="nav-icon">♧</span>Клиенты</a>
-      <a routerLink="/technicians" routerLinkActive="active"><span class="nav-icon">♙</span>Мастера</a>
+      <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="menuOpen.set(false)"><span class="nav-icon" aria-hidden="true">⌂</span>Главная</a>
+      <a routerLink="/shop" routerLinkActive="active" (click)="menuOpen.set(false)"><span class="nav-icon" aria-hidden="true">▣</span>Магазин</a>
+      <button class="nav-parent" type="button" [class.active]="section() === 'Заявки'" [attr.aria-expanded]="requestsOpen()" (click)="requestsOpen.set(!requestsOpen())">
+        <span class="nav-icon" aria-hidden="true">▤</span>Заявки<span class="nav-chevron" aria-hidden="true">{{ requestsOpen() ? '⌄' : '›' }}</span>
+      </button>
+      @if (requestsOpen()) {
+        <div class="nav-submenu">
+          <a routerLink="/requests/new" routerLinkActive="active" (click)="menuOpen.set(false)">Создать заявку</a>
+          <a routerLink="/requests/my" routerLinkActive="active" (click)="menuOpen.set(false)">Мои заявки</a>
+        </div>
+      }
+      <a routerLink="/settings" routerLinkActive="active" (click)="menuOpen.set(false)"><span class="nav-icon" aria-hidden="true">⚙</span>Настройки</a>
     </nav>
-    <div class="sidebar-bottom">
-      <div class="sidebar-caption">СИСТЕМА</div>
-      <nav class="sidebar-nav" aria-label="Система">
-        <a routerLink="/settings" routerLinkActive="active"><span class="nav-icon">⚙</span>Настройки</a>
-      </nav>
-      <div class="workspace-card"><span class="workspace-dot"></span><div><strong>TechPoint</strong><small>Демонстрационный режим</small></div></div>
+    <div class="sidebar-account">
+      @if (auth.user(); as user) {
+        <div class="account-details"><strong>{{ auth.displayName() }}</strong><span>{{ roleLabels[user.role] }}</span></div>
+        <button class="logout-button" type="button" (click)="logout()">Выйти</button>
+      } @else {
+        <p>Личный кабинет</p>
+        <a class="button button-primary account-login" routerLink="/login" (click)="menuOpen.set(false)">Войти</a>
+      }
     </div>
   </aside>
 
   <div class="workspace">
     <header class="topbar">
-      <div class="topbar-left">
-        <button class="icon-button mobile-menu" type="button" aria-label="Открыть меню" (click)="menuOpen.set(true)">☰</button>
-        <div class="breadcrumb">Рабочее пространство <span>/</span> <strong>{{ section() }}</strong></div>
-      </div>
-      <div class="topbar-right"><span class="today">{{ today }}</span><span class="avatar" title="Команда TechPoint">TP</span></div>
+      <button class="icon-button mobile-menu" type="button" aria-label="Открыть меню" (click)="menuOpen.set(true)">☰</button>
+      <span class="topbar-title">{{ section() }}</span>
     </header>
     <main class="main-content"><router-outlet /></main>
   </div>
@@ -37,7 +42,6 @@
 
 @if (notification.message()) {
   <div class="toast" [class.toast-error]="notification.isError()" role="status">
-    <span class="toast-symbol">{{ notification.isError() ? '!' : '✓' }}</span>
     <span>{{ notification.message() }}</span>
     <button type="button" aria-label="Закрыть уведомление" (click)="notification.clear()">×</button>
   </div>

@@ -57,3 +57,46 @@ export function formatDate(value: string): string {
 export function formatDateTime(value: string): string {
   return new Intl.DateTimeFormat('ru-KZ', { day: '2-digit', month: 'short', year: 'numeric', hour: '2-digit', minute: '2-digit' }).format(new Date(value));
 }
+
+export type UserRole = 'Admin' | 'Manager' | 'Master' | 'User' | 'Guest';
+export const USER_ROLE_LABELS: Record<UserRole, string> = {
+  Admin: 'Администратор', Manager: 'Менеджер', Master: 'Мастер', User: 'Пользователь', Guest: 'Гость',
+};
+
+export interface User {
+  id: string;
+  username: string;
+  role: UserRole;
+  firstName?: string;
+  lastName?: string;
+  email?: string;
+  phone?: string;
+}
+
+export type ProductCategory = 'Ноутбуки' | 'Смартфоны' | 'Компьютеры' | 'Мониторы' | 'Комплектующие' | 'Периферия';
+export type ProductCondition = 'new' | 'refurbished';
+
+export interface Product {
+  id: number;
+  name: string;
+  category: ProductCategory;
+  condition: ProductCondition;
+  specs: string;
+  price: number;
+  imageUrl: string;
+}
+
+export type RepairRequestStatus = 'new' | 'accepted' | 'diagnostics' | 'repair' | 'ready' | 'completed' | 'cancelled';
+
+export interface RepairRequest {
+  id: number;
+  number: string;
+  userId: string;
+  deviceType: string;
+  brandModel: string;
+  problem: string;
+  phone: string;
+  comment: string;
+  createdAt: string;
+  status: RepairRequestStatus;
+}
