@@ -21,17 +21,21 @@ export class SettingsPage {
     phone: [this.auth.user()?.phone ?? '', Validators.pattern(/^$|^\+?[\d\s()-]{10,20}$/)],
   });
 
-  save(): void {
+  async save(): Promise<void> {
     if (this.form.invalid || (this.form.controls.phone.value && this.form.controls.phone.value.replace(/\D/g, '').length < 10)) {
       this.form.markAllAsTouched();
       this.notification.error('Проверьте email и номер телефона');
       return;
     }
     const value = this.form.getRawValue();
-    this.auth.updateProfile({
-      firstName: value.firstName.trim(), lastName: value.lastName.trim(),
-      email: value.email.trim(), phone: value.phone.trim(),
-    });
-    this.notification.success('Изменения сохранены');
+    try {
+      await this.auth.updateProfile({
+        firstName: value.firstName.trim(), lastName: value.lastName.trim(),
+        email: value.email.trim(), phone: value.phone.trim(),
+      });
+      this.notification.success('Изменения сохранены');
+    } catch (error) {
+      this.notification.error(error instanceof Error ? error.message : 'Не удалось сохранить профиль');
+    }
   }
 }

@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router, RouterLink } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
@@ -17,6 +17,7 @@ export class OrderFormPage {
   private readonly router = inject(Router);
   private readonly notification = inject(NotificationService);
   readonly deviceTypes = ['Ноутбук', 'Компьютер', 'Смартфон', 'Монитор', 'Другое'];
+  readonly saving = signal(false);
   readonly form = this.fb.nonNullable.group({
     deviceType: ['', Validators.required],
     brandModel: ['', Validators.required],
@@ -25,7 +26,7 @@ export class OrderFormPage {
     comment: [''],
   });
 
-  submit(): void {
+  async submit(): Promise<void> {
     const value = this.form.getRawValue();
     if (!value.brandModel.trim()) this.form.controls.brandModel.setErrors({ required: true });
     if (!value.problem.trim()) this.form.controls.problem.setErrors({ required: true });
@@ -35,14 +36,20 @@ export class OrderFormPage {
       this.notification.error('Проверьте обязательные поля заявки');
       return;
     }
-    const user = this.auth.user();
-    if (!user) return;
-    this.requests.create({
-      userId: user.id, deviceType: value.deviceType,
-      brandModel: value.brandModel.trim(), problem: value.problem.trim(),
-      phone: value.phone.trim(), comment: value.comment.trim(),
-    });
-    this.notification.success('Заявка отправлена');
-    void this.router.navigateByUrl('/requests/my');
+    if (!this.auth.user()) return;
+    this.saving.set(true);
+    try {
+      await this.requests.create({
+        deviceType: value.deviceType, brandModel: value.brandModel.trim(),
+        description: value.problem.trim(), contactPhone: value.phone.trim(),
+        comment: value.comment.trim(),
+      });
+      this.notification.success('Заявка отправлена');
+      await this.router.navigateByUrl('/requests/my');
+    } catch (error) {
+      this.notification.error(error instanceof Error ? error.message : 'Не удалось отправить заявку');
+    } finally {
+      this.saving.set(false);
+    }
   }
 }

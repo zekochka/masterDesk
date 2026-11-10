@@ -1,0 +1,18 @@
+ Network masterdesk-smoke-faccef43_default Creating 
+ Network masterdesk-smoke-faccef43_default Created 
+ Volume masterdesk-smoke-faccef43_masterdesk_pgdata Creating 
+ Volume masterdesk-smoke-faccef43_masterdesk_pgdata Created 
+ Container masterdesk-smoke-faccef43-postgres-1 Creating 
+ Container masterdesk-smoke-faccef43-postgres-1 Created 
+ Container masterdesk-smoke-faccef43-postgres-1 Starting 
+ Container masterdesk-smoke-faccef43-postgres-1 Started 
+PostgreSQL smoke test passed: auth, roles, ownership, transitions, persistence.
+ Container masterdesk-smoke-faccef43-postgres-1 Stopping 
+ Container masterdesk-smoke-faccef43-postgres-1 Stopped 
+ Container masterdesk-smoke-faccef43-postgres-1 Removing 
+ Container masterdesk-smoke-faccef43-postgres-1 Removed 
+ Network masterdesk-smoke-faccef43_default Removing 
+ Volume masterdesk-smoke-faccef43_masterdesk_pgdata Removing 
+ Volume masterdesk-smoke-faccef43_masterdesk_pgdata Removed 
+ Network masterdesk-smoke-faccef43_default Removed 
+EXIT_CODE=0

@@ -86,17 +86,20 @@ export interface Product {
   imageUrl: string;
 }
 
-export type RepairRequestStatus = 'new' | 'accepted' | 'diagnostics' | 'repair' | 'ready' | 'completed' | 'cancelled';
+export type RepairRequestStatus = 'new' | 'accepted' | 'completed';
 
 export interface RepairRequest {
-  id: number;
-  number: string;
-  userId: string;
+  id: string;
+  requestNumber: string;
+  clientId: string;
+  masterId: string | null;
   deviceType: string;
   brandModel: string;
-  problem: string;
-  phone: string;
-  comment: string;
+  description: string;
+  contactPhone: string;
+  comment: string | null;
   createdAt: string;
+  acceptedAt: string | null;
+  completedAt: string | null;
   status: RepairRequestStatus;
 }

@@ -1,15 +1,37 @@
-<div class="page-heading"><div><span class="eyebrow">ЛИЧНЫЙ КАБИНЕТ</span><h1>Мои заявки</h1><p>История ваших обращений в сервисный центр.</p></div><a class="button button-primary" routerLink="/requests/new">Создать заявку</a></div>
-@if (items().length) {
+<div class="page-heading"><div><span class="eyebrow">ЛИЧНЫЙ КАБИНЕТ</span>
+  <h1>{{ mode === 'available' ? 'Новые заявки' : mode === 'assigned' ? 'Мои ремонты' : 'Мои заявки' }}</h1>
+  <p>{{ mode === 'available' ? 'Обращения, которые ещё не принял мастер.' : mode === 'assigned' ? 'Заявки, принятые вами в работу.' : 'История ваших обращений в сервисный центр.' }}</p>
+</div>
+  @if (mode === 'mine') { <a class="button button-primary" routerLink="/requests/new">Создать заявку</a> }
+  @else { <button class="button button-secondary" type="button" (click)="reload()">Обновить</button> }
+</div>
+@if (loading()) {
+  <div class="empty-state">Загрузка заявок…</div>
+} @else if (error()) {
+  <div class="empty-state"><p role="alert">{{ error() }}</p><button class="button button-secondary" type="button" (click)="reload()">Повторить</button></div>
+} @else if (items().length) {
   <div class="request-list">
     @for (item of items(); track item.id) {
       <article class="request-card">
-        <div class="request-main"><div class="request-meta"><strong>{{ item.number }}</strong><span>{{ formatDate(item.createdAt) }}</span></div>
-          <h2>{{ item.deviceType }} · {{ item.brandModel }}</h2><p>{{ item.problem }}</p>
+        <div class="request-main">
+          <div class="request-meta"><strong>{{ item.requestNumber }}</strong><span>Создана: {{ formatDateTime(item.createdAt) }}</span></div>
+          <h2>{{ item.deviceType }} · {{ item.brandModel }}</h2><p>{{ item.description }}</p>
+          @if (item.acceptedAt) { <p class="request-date">Принята: {{ formatDateTime(item.acceptedAt) }}</p> }
+          @if (item.completedAt) { <p class="request-date">Завершена: {{ formatDateTime(item.completedAt) }}</p> }
+          @if (mode === 'available') { <p class="request-date">Контакт: {{ item.contactPhone }}</p> }
+          @if (mode === 'assigned' && item.status === 'accepted') {
+            <button class="button button-primary request-action" type="button" [disabled]="busyId() === item.id" (click)="act(item.id)">Завершить ремонт</button>
+          }
+          @if (mode === 'available') {
+            <button class="button button-primary request-action" type="button" [disabled]="busyId() === item.id" (click)="act(item.id)">Принять</button>
+          }
         </div>
         <span class="request-status status-{{ item.status }}">{{ statusLabels[item.status] }}</span>
       </article>
     }
   </div>
 } @else {
-  <div class="empty-state"><h2>Заявок пока нет</h2><p>Опишите проблему с техникой, и ваша заявка появится здесь.</p><a class="button button-primary" routerLink="/requests/new">Оставить заявку</a></div>
+  <div class="empty-state"><h2>{{ mode === 'available' ? 'Новых заявок нет' : mode === 'assigned' ? 'Принятых заявок нет' : 'Заявок пока нет' }}</h2>
+    @if (mode === 'mine') { <p>Опишите проблему с техникой, и ваша заявка появится здесь.</p><a class="button button-primary" routerLink="/requests/new">Оставить заявку</a> }
+  </div>
 }

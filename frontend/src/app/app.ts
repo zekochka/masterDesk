@@ -29,6 +29,7 @@ export class App {
   });
 
   constructor() {
+    void this.auth.refreshProfile();
     this.router.events.pipe(filter((event): event is NavigationEnd => event instanceof NavigationEnd)).subscribe((event) => {
       this.path.set(event.urlAfterRedirects);
       if (event.urlAfterRedirects.startsWith('/requests')) this.requestsOpen.set(true);

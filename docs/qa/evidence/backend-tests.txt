@@ -1,0 +1,10 @@
+  MasterDesk.Api -> C:\Users\hakot\MyProjects\it_management\masterDesk\backend\MasterDesk.Api\bin\Lz11Check\MasterDesk.Api.dll
+  MasterDesk.Api.Tests -> C:\Users\hakot\MyProjects\it_management\masterDesk\tests\MasterDesk.Api.Tests\bin\Lz11Check\MasterDesk.Api.Tests.dll
+Тестовый запуск для C:\Users\hakot\MyProjects\it_management\masterDesk\tests\MasterDesk.Api.Tests\bin\Lz11Check\MasterDesk.Api.Tests.dll (.NETCoreApp,Version=v9.0)
+Версия VSTest 17.12.0 (x64)
+
+Запуск выполнения тестов; подождите...
+Общее количество тестовых файлов (1), соответствующих указанному шаблону.
+
+Пройден!   : не пройдено     0, пройдено     2, пропущено     0, всего     2, длительность 4 s. - MasterDesk.Api.Tests.dll (net9.0)
+EXIT_CODE=0

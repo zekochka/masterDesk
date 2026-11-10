@@ -1,0 +1,18 @@
+
+> frontend@0.0.0 test
+> ng test --watch=false
+
+> Building...
+√ Building...
+Application bundle generation complete. [3.873 seconds] - 2026-11-10T13:37:55.890Z
+
+
+ RUN  v4.1.12 C:/Users/hakot/MyProjects/it_management/masterDesk/frontend
+
+
+ Test Files  1 passed (1)
+      Tests  2 passed (2)
+   Start at  18:37:57
+   Duration  5.04s (transform 173ms, setup 1.08s, import 311ms, tests 119ms, environment 2.98s)
+
+EXIT_CODE=0

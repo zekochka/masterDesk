@@ -7,7 +7,7 @@ import { NotificationService } from '../../shared/notification.service';
 import { OrderFormPage } from './order-form';
 
 describe('OrderFormPage', () => {
-  const create = vi.fn();
+  const create = vi.fn().mockResolvedValue({ id: 'request-1' });
   const success = vi.fn();
   const error = vi.fn();
   let page: OrderFormPage;
@@ -43,17 +43,17 @@ describe('OrderFormPage', () => {
     expect(router.navigateByUrl).not.toHaveBeenCalled();
   });
 
-  it('creates a request for the current user with trimmed fields and navigates', () => {
+  it('sends trimmed fields without a client id and navigates after the API succeeds', async () => {
     page.form.setValue({
       deviceType: 'Ноутбук', brandModel: ' ThinkPad ', problem: ' Не включается ',
       phone: '+7 700 000 00 00 ', comment: ' После 18:00 ',
     });
 
-    page.submit();
+    await page.submit();
 
     expect(create).toHaveBeenCalledWith({
-      userId: 'user-1', deviceType: 'Ноутбук', brandModel: 'ThinkPad',
-      problem: 'Не включается', phone: '+7 700 000 00 00', comment: 'После 18:00',
+      deviceType: 'Ноутбук', brandModel: 'ThinkPad',
+      description: 'Не включается', contactPhone: '+7 700 000 00 00', comment: 'После 18:00',
     });
     expect(success).toHaveBeenCalledWith('Заявка отправлена');
     expect(router.navigateByUrl).toHaveBeenCalledWith('/requests/my');
