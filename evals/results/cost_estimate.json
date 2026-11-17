@@ -1,0 +1,37 @@
+{
+  "prepared_date": "2026-11-17",
+  "status": "FINANCIAL SCENARIO (not actual invoices or measured production traffic)",
+  "source_of_token_counts": "PLAN ASSUMPTION: input/output token counts not yet measured",
+  "input_tokens": 900,
+  "output_tokens": 80,
+  "openai_model": "gpt-6-luna",
+  "source_price_api": "https://developers.openai.com/api/docs/models/gpt-6-luna",
+  "input_usd_per_million": 0.1,
+  "output_usd_per_million": 0.5,
+  "gpu_model": "Runpod RTX A5000",
+  "source_price_gpu": "https://www.runpod.io/pricing",
+  "gpu_hourly_usd": 0.27,
+  "gpu_hours_per_month": 730,
+  "gpu_cost_usd_per_month": 197.1,
+  "api_cost_per_request_usd": 0.00013,
+  "breakeven_requests_per_month_ignoring_other_costs": 1516154,
+  "scenario": [
+    {
+      "case": "base",
+      "requests_per_month": 260,
+      "avg_input_tokens": 900,
+      "avg_output_tokens": 80,
+      "api_cost_usd_per_month": 0.0338,
+      "gpu_24x7_usd_per_month": 197.1
+    },
+    {
+      "case": "x10",
+      "requests_per_month": 2600,
+      "avg_input_tokens": 900,
+      "avg_output_tokens": 80,
+      "api_cost_usd_per_month": 0.338,
+      "gpu_24x7_usd_per_month": 197.1
+    }
+  ],
+  "limitations": "Figures ignore API retries/caching, GPU storage/network/engineering, model quality, currency conversion, taxes. tiktoken o200k_base is a proxy for the specific commercial model, not its provider billing tokenizer."
+}

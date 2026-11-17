@@ -1,0 +1,207 @@
+﻿id,approach,text,true_category,predicted_category,true_device,predicted_device,true_incident,predicted_incident,category_ok,device_ok,incident_ok,raw_response,error
+D01,qwen_zeroshot,"Айфон 13 про упал на плитку, экран стал чёрным, но звонки идут.",DISPLAY,DISPLAY,iPhone 13 Pro,A13 Pro,DROP,DROP,1,0,1,"{
+  ""device_model"": ""A13 Pro"",
+  ""category"": ""DISPLAY"",
+  ""incident"": ""DROP"",
+  ""incident_DROPPED_ON"": ""PLATE""
+}",
+D02,qwen_zeroshot,"Samsung Galaxy A54, треснул дисплей после падения.",DISPLAY,DISPLAY,Samsung Galaxy A54,Samsung Galaxy A54,DROP,DROP,1,1,1,"{
+  ""device_model"": ""Samsung Galaxy A54"",
+  ""category"": ""DISPLAY"",
+  ""incident"": ""DROP"",
+  ""incident_details"": ""Дисплей трескенде падып жеткен""
+}",
+D03,qwen_zeroshot,"На Redmi Note 12 появились полосы на экране, не ронял.",DISPLAY,DISPLAY,Redmi Note 12,Redmi Note 12,NONE,DROP,1,1,0,"{
+  ""device_model"": ""Redmi Note 12"",
+  ""category"": ""DISPLAY"",
+  ""incident"": ""DROP"",
+  ""category_detail"": ""POLLS""
+}",
+D04,qwen_zeroshot,"Lenovo IdeaPad 3: ноут запускается, но почти ничего не видно, только еле заметный силуэт.",DISPLAY,DISPLAY,Lenovo IdeaPad 3,UNKNOWN,NONE,NONE,1,0,1,"{
+  ""device_model"": ""UNKNOWN"",
+  ""category"": ""DISPLAY"",
+  ""incident"": ""NONE"",
+  ""category_detail"": ""The screen is not displaying properly, only showing a faint silhouette.""
+}",
+D05,qwen_zeroshot,"Poco X5 суға түсіп кетті, енді сурет жоқ, қоңыраулар келеді.",DISPLAY,OVERHEATING,Poco X5,UNKNOWN,LIQUID,LIQUID,0,0,1,"{
+  ""device_model"": ""UNKNOWN"",
+  ""category"": ""OVERHEATING"",
+  ""incident"": ""LIQUID""
+}",
+C01,qwen_zeroshot,iPhone 11 не заряжается даже с другим кабелем.,CHARGING,__INVALID__,iPhone 11,iPhone 11,NONE,DROP,0,1,0,"{
+  ""device_model"": ""iPhone 11"",
+  ""category"": ""BATTERY"",
+  ""incident"": ""DROP"",
+  ""category"": ""NONE""
+}",
+C02,qwen_zeroshot,"Samsung Galaxy A32: шатается разъём зарядки, кабель отходит.",CHARGING,CHARGING,Samsung Galaxy A32,Samsung Galaxy A32,NONE,DROP,1,1,0,"{
+  ""device_model"": ""Samsung Galaxy A32"",
+  ""category"": ""CHARGING"",
+  ""incident"": ""DROP"",
+  ""incident_details"": ""кабель отходит""
+}",
+C03,qwen_zeroshot,Redmi 10 зарядка не идёт после того как попала вода.,CHARGING,CHARGING,Redmi 10,UNKNOWN,LIQUID,LIQUID,1,0,1,"{
+  ""device_model"": ""UNKNOWN"",
+  ""category"": ""CHARGING"",
+  ""incident"": ""LIQUID"",
+  ""incident_details"": ""The charging does not work after getting wet.""
+}",
+C04,qwen_zeroshot,"На iPad 9 горит значок молнии, но процент зарядки не растёт.",CHARGING,CHARGING,iPad 9,UNKNOWN,NONE,DROP,1,0,0,"{
+  ""device_model"": ""UNKNOWN"",
+  ""category"": ""CHARGING"",
+  ""incident"": ""DROP""
+}",
+C05,qwen_zeroshot,"Honor 90: после падения кабель вставляю, а проценты стоят на месте.",CHARGING,CHARGING,Honor 90,HONOR 90,DROP,DROP,1,1,1,"{
+  ""device_model"": ""HONOR 90"",
+  ""category"": ""CHARGING"",
+  ""incident"": ""DROP"",
+  ""incident_details"": ""Кабель вставляется, процент зарядки не изменяется""
+}",
+B01,qwen_zeroshot,"iPhone 12 хватает только на пару часов без розетки, раньше работал целый день.",BATTERY,BATTERY,iPhone 12,UNKNOWN,NONE,NONE,1,0,1,"{
+  ""device_model"": ""UNKNOWN"",
+  ""category"": ""BATTERY"",
+  ""incident"": ""NONE""
+}",
+B02,qwen_zeroshot,"Samsung Galaxy S21: батарея вздулась, крышка отошла.",BATTERY,OVERHEATING,Samsung Galaxy S21,Samsung Galaxy S21,NONE,DROP,0,1,0,"{
+  ""device_model"": ""Samsung Galaxy S21"",
+  ""category"": ""BATTERY"",
+  ""incident"": ""DROP"",
+  ""category"": ""OVERHEATING""
+}",
+B03,qwen_zeroshot,"Xiaomi 12 кешке дейін қуаты бітіп қалады, раньше до вечера хватало.",BATTERY,BATTERY,Xiaomi 12,UNKNOWN,NONE,NONE,1,0,1,"{
+  ""device_model"": ""UNKNOWN"",
+  ""category"": ""BATTERY"",
+  ""incident"": ""NONE""
+}",
+B04,qwen_zeroshot,MacBook Air M1 выключается на 30 процентах батареи.,BATTERY,BATTERY,MacBook Air M1,UNKNOWN,NONE,NONE,1,0,1,"{
+  ""device_model"": ""UNKNOWN"",
+  ""category"": ""BATTERY"",
+  ""incident"": ""NONE""
+}",
+B05,qwen_zeroshot,HP Pavilion 15: аккумулятор не держит заряд без сети.,BATTERY,BATTERY,HP Pavilion 15,HP Pavilion 15,NONE,NONE,1,1,1,"{""device_model"":""HP Pavilion 15"",""category"":""BATTERY"",""incident"":""NONE""}",
+P01,qwen_zeroshot,"Acer Aspire 5 совсем не включается, индикаторы не горят.",POWER,DISPLAY,Acer Aspire 5,UNKNOWN,NONE,NONE,0,0,1,"{
+  ""device_model"": ""UNKNOWN"",
+  ""category"": ""DISPLAY"",
+  ""incident"": ""NONE""
+}",
+P02,qwen_zeroshot,Lenovo ThinkPad T480 сам отключается сразу после старта.,POWER,DISPLAY,Lenovo ThinkPad T480,UNKNOWN,NONE,DROP,0,0,0,"{
+  ""device_model"": ""UNKNOWN"",
+  ""category"": ""DISPLAY"",
+  ""incident"": ""DROP"",
+  ""category_detail"": ""The display turns off immediately after the device is powered on.""
+}",
+P03,qwen_zeroshot,"Samsung Galaxy S22 упал, после этого не включается.",POWER,DISPLAY,Samsung Galaxy S22,UNKNOWN,DROP,DROP,0,0,1,"{
+  ""device_model"": ""UNKNOWN"",
+  ""category"": ""DISPLAY"",
+  ""incident"": ""DROP""
+}",
+P04,qwen_zeroshot,"iPhone 14 өшіп қалды, мүлде қосылмайды.",POWER,POWER,iPhone 14,iPhone 14,NONE,DROP,1,1,0,"{
+  ""device_model"": ""iPhone 14"",
+  ""category"": ""POWER"",
+  ""incident"": ""DROP"",
+  ""category_detail"": ""OVERHEATING""
+}",
+P05,qwen_zeroshot,Asus VivoBook 15 после кофе на клавиатуре не подаёт признаков жизни.,POWER,__INVALID__,Asus VivoBook 15,UNKNOWN,LIQUID,DROP,0,0,0,"{
+  ""device_model"": ""UNKNOWN"",
+  ""category"": ""DISPLAY"",
+  ""incident"": ""DROP"",
+  ""category"": ""NONE""
+}",
+H01,qwen_zeroshot,"MSI Cyborg 15 сильно греется в играх, вентилятор шумит.",OVERHEATING,OVERHEATING,MSI Cyborg 15,UNKNOWN,NONE,NONE,1,0,1,"{
+  ""device_model"": ""UNKNOWN"",
+  ""category"": ""OVERHEATING"",
+  ""incident"": ""NONE""
+}",
+H02,qwen_zeroshot,Lenovo Legion 5 после 10 минут работы перегревается и тормозит.,OVERHEATING,OVERHEATING,Lenovo Legion 5,UNKNOWN,NONE,NONE,1,0,1,"{
+  ""device_model"": ""UNKNOWN"",
+  ""category"": ""OVERHEATING"",
+  ""incident"": ""NONE"",
+  ""category_detail"": ""BATTERY""
+}",
+H03,qwen_zeroshot,"iPhone 13 ысып кетеді, камера қосқанда қатты қызады.",OVERHEATING,SOFTWARE,iPhone 13,iPhone 13,NONE,DROP,0,1,0,"{
+  ""device_model"": ""iPhone 13"",
+  ""category"": ""SOFTWARE"",
+  ""incident"": ""DROP"",
+  ""category_detail"": ""Camera""
+}",
+H04,qwen_zeroshot,Redmi Note 11 после падения стал горячий даже в кармане.,OVERHEATING,OVERHEATING,Redmi Note 11,UNKNOWN,DROP,DROP,1,0,1,"{""device_model"":""UNKNOWN"",""category"":""OVERHEATING"",""incident"":""DROP""}",
+H05,qwen_zeroshot,"Dell Inspiron 15: кулер всегда на максимуме, корпус горячий.",OVERHEATING,OVERHEATING,Dell Inspiron 15,UNKNOWN,NONE,NONE,1,0,1,"{
+  ""device_model"": ""UNKNOWN"",
+  ""category"": ""OVERHEATING"",
+  ""incident"": ""NONE""
+}",
+A01,qwen_zeroshot,"Samsung Galaxy A52: во время звонка на другом конце слышат тишину, меня не слышно.",AUDIO,AUDIO,Samsung Galaxy A52,UNKNOWN,NONE,DROP,1,0,0,"{
+  ""device_model"": ""UNKNOWN"",
+  ""category"": ""AUDIO"",
+  ""incident"": ""DROP""
+}",
+A02,qwen_zeroshot,iPhone 11 после падения пропал звук в динамике.,AUDIO,AUDIO,iPhone 11,iPhone 11,DROP,DROP,1,1,1,"{
+  ""device_model"": ""iPhone 11"",
+  ""category"": ""AUDIO"",
+  ""incident"": ""DROP"",
+  ""category_detail"": ""OVERHEATING""
+}",
+A03,qwen_zeroshot,"На Redmi Note 10 микрофон шипит, голос записывается тихо.",AUDIO,AUDIO,Redmi Note 10,UNKNOWN,NONE,DROP,1,0,0,"{
+  ""device_model"": ""UNKNOWN"",
+  ""category"": ""AUDIO"",
+  ""incident"": ""DROP""
+}",
+A04,qwen_zeroshot,"Lenovo IdeaPad 5 — наушники работают, встроенные динамики молчат.",AUDIO,AUDIO,Lenovo IdeaPad 5,UNKNOWN,NONE,NONE,1,0,1,"{
+  ""device_model"": ""UNKNOWN"",
+  ""category"": ""AUDIO"",
+  ""incident"": ""NONE""
+}",
+A05,qwen_zeroshot,HP Victus 16 су төгілген соң дыбыс шықпай қалды.,AUDIO,AUDIO,HP Victus 16,UNKNOWN,LIQUID,DROP,1,0,0,"{
+  ""device_model"": ""UNKNOWN"",
+  ""category"": ""AUDIO"",
+  ""incident"": ""DROP""
+}",
+S01,qwen_zeroshot,Xiaomi Redmi 12 висит на заставке после апдейта.,SOFTWARE,DISPLAY,Xiaomi Redmi 12,UNKNOWN,NONE,DROP,0,0,0,"{
+  ""device_model"": ""UNKNOWN"",
+  ""category"": ""DISPLAY"",
+  ""incident"": ""DROP""
+}",
+S02,qwen_zeroshot,"iPhone 12 приложения постоянно вылетают, перезагрузка не помогает.",SOFTWARE,SOFTWARE,iPhone 12,iPhone 12,NONE,DROP,1,1,0,"{
+  ""device_model"": ""iPhone 12"",
+  ""category"": ""SOFTWARE"",
+  ""incident"": ""DROP"",
+  ""incident_details"": ""приложения постоянно вылетают, перезагрузка не помогает""
+}",
+S03,qwen_zeroshot,"Samsung Galaxy A34 после патча всё лагает, меню открывается по минуте.",SOFTWARE,SOFTWARE,Samsung Galaxy A34,UNKNOWN,NONE,DROP,1,0,0,"{
+  ""device_model"": ""UNKNOWN"",
+  ""category"": ""SOFTWARE"",
+  ""incident"": ""DROP""
+}",
+S04,qwen_zeroshot,Asus TUF F15 Windows уходит в синий экран после загрузки.,SOFTWARE,DISPLAY,Asus TUF F15,UNKNOWN,NONE,DROP,0,0,0,"{
+  ""device_model"": ""UNKNOWN"",
+  ""category"": ""DISPLAY"",
+  ""incident"": ""DROP""
+}",
+S05,qwen_zeroshot,Huawei P30: телефон просит восстановление системы при включении.,SOFTWARE,SOFTWARE,Huawei P30,Huawei P30,NONE,DROP,1,1,0,"{
+  ""device_model"": ""Huawei P30"",
+  ""category"": ""SOFTWARE"",
+  ""incident"": ""DROP""
+}",
+O01,qwen_zeroshot,"iPhone 15 камера не фокусируется, остальное работает.",OTHER,DISPLAY,iPhone 15,iPhone 15,NONE,NONE,0,1,1,"{
+  ""device_model"": ""iPhone 15"",
+  ""category"": ""DISPLAY"",
+  ""incident"": ""NONE"",
+  ""category_detail"": ""CAMERA""
+}",
+O02,qwen_zeroshot,"HP ProBook не подключается к Wi-Fi, сеть видит.",OTHER,DISPLAY,HP ProBook,UNKNOWN,NONE,NONE,0,0,1,"{
+  ""device_model"": ""UNKNOWN"",
+  ""category"": ""DISPLAY"",
+  ""incident"": ""NONE""
+}",
+O03,qwen_zeroshot,Acer Swift: после падения две клавиши залипают.,OTHER,SOFTWARE,Acer Swift,Acer Swift,DROP,DROP,0,1,1,"{
+  ""device_model"": ""Acer Swift"",
+  ""category"": ""SOFTWARE"",
+  ""incident"": ""DROP"",
+  ""incident_details"": ""две клавиши залипают""
+}",
+O04,qwen_zeroshot,"Не знаю модель телефона, стал плохо работать GPS.",OTHER,SOFTWARE,UNKNOWN,UNKNOWN,NONE,NONE,0,1,1,"{
+  ""device_model"": ""UNKNOWN"",
+  ""category"": ""SOFTWARE"",
+  ""incident"": ""NONE""
+}",
+O05,qwen_zeroshot,"После дождя у планшета плохо работает кнопка громкости, марку не знаю.",OTHER,SOFTWARE,UNKNOWN,UNKNOWN,LIQUID,NONE,0,1,0,"{""device_model"":""UNKNOWN"",""category"":""SOFTWARE"",""incident"":""NONE""}",

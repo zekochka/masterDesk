@@ -1,0 +1,40 @@
+{"id": "D01", "text": "Айфон 13 про упал на плитку, экран стал чёрным, но звонки идут.", "expected": {"device_model": "iPhone 13 Pro", "category": "DISPLAY", "incident": "DROP"}}
+{"id": "D02", "text": "Samsung Galaxy A54, треснул дисплей после падения.", "expected": {"device_model": "Samsung Galaxy A54", "category": "DISPLAY", "incident": "DROP"}}
+{"id": "D03", "text": "На Redmi Note 12 появились полосы на экране, не ронял.", "expected": {"device_model": "Redmi Note 12", "category": "DISPLAY", "incident": "NONE"}}
+{"id": "D04", "text": "Lenovo IdeaPad 3: ноут запускается, но почти ничего не видно, только еле заметный силуэт.", "expected": {"device_model": "Lenovo IdeaPad 3", "category": "DISPLAY", "incident": "NONE"}}
+{"id": "D05", "text": "Poco X5 суға түсіп кетті, енді сурет жоқ, қоңыраулар келеді.", "expected": {"device_model": "Poco X5", "category": "DISPLAY", "incident": "LIQUID"}}
+{"id": "C01", "text": "iPhone 11 не заряжается даже с другим кабелем.", "expected": {"device_model": "iPhone 11", "category": "CHARGING", "incident": "NONE"}}
+{"id": "C02", "text": "Samsung Galaxy A32: шатается разъём зарядки, кабель отходит.", "expected": {"device_model": "Samsung Galaxy A32", "category": "CHARGING", "incident": "NONE"}}
+{"id": "C03", "text": "Redmi 10 зарядка не идёт после того как попала вода.", "expected": {"device_model": "Redmi 10", "category": "CHARGING", "incident": "LIQUID"}}
+{"id": "C04", "text": "На iPad 9 горит значок молнии, но процент зарядки не растёт.", "expected": {"device_model": "iPad 9", "category": "CHARGING", "incident": "NONE"}}
+{"id": "C05", "text": "Honor 90: после падения кабель вставляю, а проценты стоят на месте.", "expected": {"device_model": "Honor 90", "category": "CHARGING", "incident": "DROP"}}
+{"id": "B01", "text": "iPhone 12 хватает только на пару часов без розетки, раньше работал целый день.", "expected": {"device_model": "iPhone 12", "category": "BATTERY", "incident": "NONE"}}
+{"id": "B02", "text": "Samsung Galaxy S21: батарея вздулась, крышка отошла.", "expected": {"device_model": "Samsung Galaxy S21", "category": "BATTERY", "incident": "NONE"}}
+{"id": "B03", "text": "Xiaomi 12 кешке дейін қуаты бітіп қалады, раньше до вечера хватало.", "expected": {"device_model": "Xiaomi 12", "category": "BATTERY", "incident": "NONE"}}
+{"id": "B04", "text": "MacBook Air M1 выключается на 30 процентах батареи.", "expected": {"device_model": "MacBook Air M1", "category": "BATTERY", "incident": "NONE"}}
+{"id": "B05", "text": "HP Pavilion 15: аккумулятор не держит заряд без сети.", "expected": {"device_model": "HP Pavilion 15", "category": "BATTERY", "incident": "NONE"}}
+{"id": "P01", "text": "Acer Aspire 5 совсем не включается, индикаторы не горят.", "expected": {"device_model": "Acer Aspire 5", "category": "POWER", "incident": "NONE"}}
+{"id": "P02", "text": "Lenovo ThinkPad T480 сам отключается сразу после старта.", "expected": {"device_model": "Lenovo ThinkPad T480", "category": "POWER", "incident": "NONE"}}
+{"id": "P03", "text": "Samsung Galaxy S22 упал, после этого не включается.", "expected": {"device_model": "Samsung Galaxy S22", "category": "POWER", "incident": "DROP"}}
+{"id": "P04", "text": "iPhone 14 өшіп қалды, мүлде қосылмайды.", "expected": {"device_model": "iPhone 14", "category": "POWER", "incident": "NONE"}}
+{"id": "P05", "text": "Asus VivoBook 15 после кофе на клавиатуре не подаёт признаков жизни.", "expected": {"device_model": "Asus VivoBook 15", "category": "POWER", "incident": "LIQUID"}}
+{"id": "H01", "text": "MSI Cyborg 15 сильно греется в играх, вентилятор шумит.", "expected": {"device_model": "MSI Cyborg 15", "category": "OVERHEATING", "incident": "NONE"}}
+{"id": "H02", "text": "Lenovo Legion 5 после 10 минут работы перегревается и тормозит.", "expected": {"device_model": "Lenovo Legion 5", "category": "OVERHEATING", "incident": "NONE"}}
+{"id": "H03", "text": "iPhone 13 ысып кетеді, камера қосқанда қатты қызады.", "expected": {"device_model": "iPhone 13", "category": "OVERHEATING", "incident": "NONE"}}
+{"id": "H04", "text": "Redmi Note 11 после падения стал горячий даже в кармане.", "expected": {"device_model": "Redmi Note 11", "category": "OVERHEATING", "incident": "DROP"}}
+{"id": "H05", "text": "Dell Inspiron 15: кулер всегда на максимуме, корпус горячий.", "expected": {"device_model": "Dell Inspiron 15", "category": "OVERHEATING", "incident": "NONE"}}
+{"id": "A01", "text": "Samsung Galaxy A52: во время звонка на другом конце слышат тишину, меня не слышно.", "expected": {"device_model": "Samsung Galaxy A52", "category": "AUDIO", "incident": "NONE"}}
+{"id": "A02", "text": "iPhone 11 после падения пропал звук в динамике.", "expected": {"device_model": "iPhone 11", "category": "AUDIO", "incident": "DROP"}}
+{"id": "A03", "text": "На Redmi Note 10 микрофон шипит, голос записывается тихо.", "expected": {"device_model": "Redmi Note 10", "category": "AUDIO", "incident": "NONE"}}
+{"id": "A04", "text": "Lenovo IdeaPad 5 — наушники работают, встроенные динамики молчат.", "expected": {"device_model": "Lenovo IdeaPad 5", "category": "AUDIO", "incident": "NONE"}}
+{"id": "A05", "text": "HP Victus 16 су төгілген соң дыбыс шықпай қалды.", "expected": {"device_model": "HP Victus 16", "category": "AUDIO", "incident": "LIQUID"}}
+{"id": "S01", "text": "Xiaomi Redmi 12 висит на заставке после апдейта.", "expected": {"device_model": "Xiaomi Redmi 12", "category": "SOFTWARE", "incident": "NONE"}}
+{"id": "S02", "text": "iPhone 12 приложения постоянно вылетают, перезагрузка не помогает.", "expected": {"device_model": "iPhone 12", "category": "SOFTWARE", "incident": "NONE"}}
+{"id": "S03", "text": "Samsung Galaxy A34 после патча всё лагает, меню открывается по минуте.", "expected": {"device_model": "Samsung Galaxy A34", "category": "SOFTWARE", "incident": "NONE"}}
+{"id": "S04", "text": "Asus TUF F15 Windows уходит в синий экран после загрузки.", "expected": {"device_model": "Asus TUF F15", "category": "SOFTWARE", "incident": "NONE"}}
+{"id": "S05", "text": "Huawei P30: телефон просит восстановление системы при включении.", "expected": {"device_model": "Huawei P30", "category": "SOFTWARE", "incident": "NONE"}}
+{"id": "O01", "text": "iPhone 15 камера не фокусируется, остальное работает.", "expected": {"device_model": "iPhone 15", "category": "OTHER", "incident": "NONE"}}
+{"id": "O02", "text": "HP ProBook не подключается к Wi-Fi, сеть видит.", "expected": {"device_model": "HP ProBook", "category": "OTHER", "incident": "NONE"}}
+{"id": "O03", "text": "Acer Swift: после падения две клавиши залипают.", "expected": {"device_model": "Acer Swift", "category": "OTHER", "incident": "DROP"}}
+{"id": "O04", "text": "Не знаю модель телефона, стал плохо работать GPS.", "expected": {"device_model": "UNKNOWN", "category": "OTHER", "incident": "NONE"}}
+{"id": "O05", "text": "После дождя у планшета плохо работает кнопка громкости, марку не знаю.", "expected": {"device_model": "UNKNOWN", "category": "OTHER", "incident": "LIQUID"}}

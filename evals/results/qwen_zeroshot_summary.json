@@ -1,0 +1,72 @@
+{
+  "approach": "qwen_zeroshot",
+  "count": 40,
+  "category_accuracy": 0.925,
+  "macro_f1": 0.9237,
+  "device_accuracy": 0.975,
+  "incident_accuracy": 0.975,
+  "all_fields_accuracy": 0.9,
+  "per_class": {
+    "DISPLAY": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 5
+    },
+    "CHARGING": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 5
+    },
+    "BATTERY": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 5
+    },
+    "POWER": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 5
+    },
+    "OVERHEATING": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 5
+    },
+    "AUDIO": {
+      "precision": 0.8333,
+      "recall": 1.0,
+      "f1": 0.9091,
+      "support": 5
+    },
+    "SOFTWARE": {
+      "precision": 0.8333,
+      "recall": 1.0,
+      "f1": 0.9091,
+      "support": 5
+    },
+    "OTHER": {
+      "precision": 1.0,
+      "recall": 0.4,
+      "f1": 0.5714,
+      "support": 5
+    }
+  },
+  "errors_count": 3,
+  "created_utc": "2026-11-17T12:51:27.891285+00:00",
+  "source": "ACTUAL CODE EXECUTION (not an estimate)",
+  "model": "qwen3.5:9b-q4_K_M",
+  "temperature": 0,
+  "seed": 42,
+  "prompt_style": "zeroshot",
+  "ollama_url": "http://localhost:11434",
+  "api_requests": 40,
+  "request_errors": 1,
+  "avg_input_tokens_ollama": 448.75,
+  "avg_output_tokens_ollama": 1328.28,
+  "avg_latency_seconds": 46.32
+}
